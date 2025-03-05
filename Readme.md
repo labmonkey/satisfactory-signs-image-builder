@@ -2,6 +2,8 @@
 
 This typescript script converts an JPG image into Satisfactory blueprint files that can be later build in the game and create a "poster" of your image. It is using the awesome [etothepii4/satisfactory-file-parser](https://github.com/etothepii4/satisfactory-file-parser) that made it possible.
 
+This script creates a vanilla blueprint built from an array 1m Signs. It is not a mod, does not add anything extra to the game, works on local games as well as servers and should rather not break by any game updates (unloess they change something with the Signs). The blueprint files can be easily shared with others just like other blueprints.
+
 **Take this project as it is. It was my fun proof of concept side project and I am not intending to maintain it. It is quite simple so it can be easily modified.**
 
 Example of 64x64 image built with 1m Signs:
@@ -16,7 +18,7 @@ Example of 64x64 image built with 1m Signs:
    Go to `src/config.ts` and edit variables inside the `Configuration` section.  
       - `imagePath`- Path to your image file. 
       - `blueprintName` - Name of the output Blueprint files.
-2. Build the project `npm run build` and run it `npm start`
+2. Build the project `npm run build` and run it `npm start` (I was using `node` `18.16.1` and `npm` `9.5.1`)
 
 ## How to add it to the game
 
