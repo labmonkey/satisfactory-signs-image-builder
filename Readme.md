@@ -12,13 +12,14 @@ Example of an 64x64 image built with 1m Signs:
 
 ## How to build it
 
-1. Prepare your image.  
+1. You will need NodeJS. Download it from [https://nodejs.org/en/download](https://nodejs.org/en/download). I was using `node` `v22.14.0 (LTS)` and `npm` `10.9.2` but many others will work too).
+2. Prepare your image.  
    This script supports only JPG, square images that have sizes are divisible by 32 so for example 32x32, 64x64, 128x128 etx. Easiest way is to place the image in the `assets` directory.
-1. Configure project.  
+3. Configure project.  
    Go to `src/config.ts` and edit variables inside the `Configuration` section.  
       - `imagePath`- Path to your image file. 
       - `blueprintName` - Name of the output Blueprint files.
-2. Build the project `npm run build` and run it `npm start` (I was using `node` `18.16.1` and `npm` `9.5.1`)
+4. Build the project. Open your terminal in this project directory and type `npm run build` then run it by `npm start`.
 
 ## How to add it to the game
 
