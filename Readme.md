@@ -1,4 +1,4 @@
-### Satisfactory Signs Image Builder
+# Satisfactory Signs Image Builder
 
 This typescript script converts an JPG image into Satisfactory blueprint files that can be later build in the game and create a "poster" of your image. It is using the awesome [etothepii4/satisfactory-file-parser](https://github.com/etothepii4/satisfactory-file-parser) that made it possible.
 
@@ -6,7 +6,7 @@ This script creates a vanilla blueprint built from an array 1m Signs. It is not 
 
 **Take this project as it is. It was my fun proof of concept side project and I am not intending to maintain it. It is quite simple so it can be easily modified.**
 
-Example of 64x64 image built with 1m Signs:
+Example of an 64x64 image built with 1m Signs:
 
 ![Preview](preview.png "Example of 64x64 image")
 
@@ -42,6 +42,6 @@ Below is the layout of the way sections are created. Each section is named as `R
 
 - The Signs do not snap that well so it might be easier to build a huge wall behind and then try to align the blueprint sections with it.
 - Each section costs 1024 x Reinforced Iron Plate and 5120 x Quartz Crystal. This requires a lot of inventory space and is only possible to be built in later stages of the game hen you unlock more inventory slots.
-- I did not notice performance drops after the "Poster" was built but there were noticable drops while building it. 
+- I did not notice performance drops after the "Poster" of 64x64 was built but there were noticable drops while building it. The bigger the image the worse it can get so be careful. 
 - While you place the blueprint the hologram will cause big FPS drop but it will go back to normal as soon as you exit build mode.
 - There is some limit of how many Signs are loaded at same time so after you build it or load the "Poster" for the first time you will see that the signs will be slowly loaded and their contents replaced 1 by 1. In my 64x64 image it took about 30 second before it was fully loaded for first time.
