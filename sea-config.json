@@ -1,0 +1,10 @@
+{
+    "main": "build/app.bundle.js",
+    "output": "build/sea-prep.blob",
+    "disableExperimentalSEAWarning": true,
+    "assets": {
+      "Signs 1m 32x32.sbp": "assets/Signs 1m 32x32.sbp",
+      "Signs 1m 32x32.sbpcfg": "assets/Signs 1m 32x32.sbpcfg"
+    }
+  }
+  

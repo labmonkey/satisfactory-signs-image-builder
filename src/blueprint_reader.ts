@@ -99,6 +99,12 @@ function saveBlueprint(blueprint: Blueprint, blueprintName: string) {
     let mainFileHeader: Uint8Array;
     const mainFileBodyChunks: Uint8Array[] = [];
 
+    const dirPath = './output';
+
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+    }
+
     const summary = Parser.WriteBlueprintFiles(
         blueprint,
         (header: Uint8Array) => {
@@ -112,8 +118,8 @@ function saveBlueprint(blueprint: Blueprint, blueprintName: string) {
     );
 
     // Write complete .sbp file back to disk
-    fs.writeFileSync(path.join(__dirname, '../output/', blueprintName + '.sbp'), Buffer.concat([mainFileHeader!, ...mainFileBodyChunks]));
+    fs.writeFileSync(path.join(process.cwd(), 'output', blueprintName + '.sbp'), Buffer.concat([mainFileHeader!, ...mainFileBodyChunks]));
 
     // Write .sbpcfg file back to disk, we get that data from the result of WriteBlueprintFiles
-    fs.writeFileSync(path.join(__dirname, '../output/', blueprintName + '.sbpcfg'), Buffer.from(summary.configFileBinary));
+    fs.writeFileSync(path.join(process.cwd(), 'output', blueprintName + '.sbpcfg'), Buffer.from(summary.configFileBinary));
 }

@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es2022",
+    "lib": ["es2022"],
     "module": "CommonJS",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
+    "outDir": "build",
     "rootDir": "./src"
   },
   "include": [
@@ -15,7 +16,7 @@
   ],
   "exclude": [
     "node_modules",
-    "dist",
+    "build",
     "output"
   ]
 }

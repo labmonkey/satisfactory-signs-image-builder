@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build TypeScript
+        run: npm run build
+
+      - name: Bundle with esbuild
+        run: npm run build:bundle
+
+      - name: Generate SEA blob
+        run: npm run build:blob
+
+      - name: Copy Node executable to ssib.exe
+        run: npm run build:exe
+
+      - name: Inject SEA blob
+        run: npm run build:inject
+
+      - name: Upload exe to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ssib.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
